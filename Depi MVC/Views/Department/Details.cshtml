@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Department
+@{
+}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Department</h5>
+        <p class="card-text">
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Name</td>
+                <td>@Model.ManagerName</td>
+            </tr>
+        </p>
+        <a href="/Department/Index" class="btn btn-primary">Back</a>
+    </div>
+</div>

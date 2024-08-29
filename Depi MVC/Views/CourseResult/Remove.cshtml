@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model CourseResults
+<form asp-action="Remove" method="post">
+    <div class="form-group">
+        <label asp-for="Degree" class="col-form-label"></label>
+        <input asp-for="Degree" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Course" class="col-form-label"></label>
+        <input asp-for="CrsId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Trainee" class="col-form-label"></label>
+        <input asp-for="TraineeId" class="form-control" />
+    </div>
+  
+
+    <input type="submit" value="Remove" class="btn btn-primary" />
+    <a asp-controller="CourseResult" asp-action="Index" class="btn btn-light">Back To List</a>
+</form>

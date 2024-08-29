@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var departments = new SelectList(ViewData["Departments"] as IEnumerable<Department>, "Id", "Name");
+    var courses = new SelectList(ViewData["Courses"] as IEnumerable<Course>, "Id", "Name");
+
+}
+@model Instructor
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="col-form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Salary" class="col-form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address" class="col-form-label"></label>
+        <input asp-for="Address" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Img" class="col-form-label"></label>
+        <input asp-for="Img" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Department" class="col-form-label"></label>
+        <select asp-for="DeptId" asp-items="@departments" class="form-control">
+            <option value="@null">-- choose the department --</option>
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Course" class="col-form-label"></label>
+        <select asp-for="CrsId" asp-items="@courses" class="form-control">
+            <option value="@null">-- choose the Course --</option>
+        </select>
+
+    </div>
+
+    <input type="submit" value="Create" class="btn btn-primary" />
+    <a asp-controller="Instructor" asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
